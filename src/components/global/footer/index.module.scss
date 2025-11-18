@@ -1,0 +1,26 @@
+.app {
+  @apply max-w-contentMaxWidth mx-auto;
+  .app-inner {
+    @apply flex  border-t  pc:pt-[86px] phone:pt-[24px]  phone:px-[20px];
+    @apply items-start gap-[24px] border-t-[rgba(0,0,0,0.08)];
+    .logo-social {
+      @apply pc:w-[550px];
+    }
+    .nav-list {
+      @apply flex-1 phone:hidden flex flex-col gap-y-[16px];
+      @apply pc:w-[300px] text-[#000000CC];
+      a {
+        &:hover {
+          @apply text-titleColor;
+        }
+      }
+    }
+    .logo-social {
+      // @apply phone:basis-[25%];
+    }
+  }
+  .copyright {
+    @apply pc:py-[48px] phone:pt-[32px] phone:pb-[30px] text-[12px] text-center;
+    @apply text-[rgba(0,0,0,0.6)] pc:text-left;
+  }
+}

@@ -1,0 +1,139 @@
+.app {
+  @apply max-w-contentWidth mx-auto pc:leading-[1.2] phone:leading-[1.5] phone:px-[20px];
+  @apply text-titleColor  pc:pb-[100px];
+  @apply pc:pt-[80px] phone:py-[48px] phone:mt-[-100px];
+
+  .feature-cards {
+    @apply pc:grid pc:grid-cols-2 pc:gap-[24px] pc:mt-[50px];
+    @apply phone:flex phone:flex-col phone:gap-[8px] phone:mt-[24px];
+  }
+
+  // 主卡片 - Asset List
+  .card-main {
+    @apply pc:col-span-1 pc:row-span-2;
+
+    .main-card {
+      @apply relative overflow-hidden rounded-[16px] h-full min-h-[360px];
+      // @apply bg-gradient-to-br from-purple-400 via-pink-400 to-orange-400;
+      @apply phone:flex phone:items-center;
+      @apply p-[32px] phone:p-[24px];
+      @apply text-white;
+      background: url('/images/part5/assets1-bg.png') center/cover;
+      .main-card-content {
+        @apply relative z-10 h-full flex flex-col;
+        @apply pc:pt-[65px];
+        .icon-group {
+          @apply flex items-center gap-[8px] mb-[24px] phone:mb-[20px];
+
+          .icon-wrapper {
+            @apply w-[40px] h-[40px] rounded-full bg-white/20 backdrop-blur-sm;
+            @apply flex items-center justify-center;
+
+            img {
+              @apply w-[24px] h-[24px] rounded-full;
+            }
+          }
+
+          .more-icon {
+            @apply w-[40px] h-[40px] rounded-full bg-white/20 backdrop-blur-sm;
+            @apply flex items-center justify-center text-white font-bold;
+          }
+        }
+
+        .card-title {
+          @apply text-[48px] phone:text-[24px] font-[600] mb-[24px] phone:mb-[12px];
+          @apply leading-[40px];
+        }
+
+        .card-description {
+          @apply text-[14px] phone:text-[12px] opacity-80 leading-[1.5];
+          @apply max-w-[400px] phone:max-w-none;
+        }
+      }
+
+      .main-card-bg {
+        @apply absolute inset-0 opacity-10;
+      }
+    }
+  }
+
+  // 次要卡片
+  .card-secondary {
+    @apply pc:col-span-1;
+
+    .secondary-card {
+      @apply relative overflow-hidden rounded-[16px] h-[172px] phone:h-[140px];
+      @apply bg-gray-50 border border-gray-100;
+      @apply p-[24px] phone:p-[20px];
+      @apply pc:hover:shadow-lg transition-all duration-300;
+
+      .card-content {
+        @apply relative z-10 h-full flex flex-col justify-center;
+
+        .card-title {
+          @apply text-[24px] phone:text-[20px] font-[600] mb-[16px] phone:mb-[8px];
+          @apply text-titleColor;
+        }
+
+        .card-description {
+          @apply text-[14px] phone:text-[13px] text-subDescColor leading-[1.4];
+          @apply max-w-[300px] phone:max-w-none;
+        }
+      }
+
+      .card-bg {
+        @apply absolute top-0 right-0 h-full;
+        //  @apply bg-gray-200 rounded-full opacity-50 flex items-center justify-center;
+
+        img {
+          @apply w-full h-full  object-cover;
+        }
+      }
+    }
+  }
+
+  // 大卡片 - Records & Notifications
+  .card-large {
+    @apply pc:col-span-2;
+
+    .large-card {
+      @apply relative overflow-hidden rounded-[16px] h-[172px] phone:h-[140px];
+      @apply bg-gradient-to-r from-gray-50 to-gray-100;
+      @apply p-[24px] phone:p-[20px];
+      @apply pc:hover:shadow-lg transition-all duration-300;
+
+      .card-content {
+        @apply relative z-10 h-full flex flex-col justify-center;
+        @apply pc:max-w-[400px];
+
+        .card-title {
+          @apply text-[24px] phone:text-[20px] font-[600] mb-[16px] phone:mb-[8px];
+          @apply text-titleColor;
+        }
+
+        .card-description {
+          @apply text-[14px] phone:text-[13px] text-subDescColor leading-[1.4];
+          @apply max-w-[370px] phone:max-w-none;
+        }
+      }
+
+      .card-bg {
+        @apply absolute top-0 right-0 h-full phone:-right-[110px];
+        // @apply bg-gray-200 rounded-full opacity-50 flex items-center justify-center;
+
+        img {
+          @apply w-full h-full  object-cover;
+        }
+      }
+    }
+  }
+
+  // 移动端特殊布局
+  @media (max-width: 1024px) {
+    .feature-cards {
+      .card-main .main-card {
+        @apply min-h-[280px];
+      }
+    }
+  }
+}

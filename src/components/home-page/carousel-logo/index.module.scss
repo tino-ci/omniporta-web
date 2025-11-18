@@ -1,0 +1,23 @@
+.app-view {
+  @apply relative;
+
+  .app {
+    @apply w-full mx-auto pc:leading-[1.2] phone:leading-[1.5];
+
+    .animate-view {
+      @apply overflow-hidden w-full bg-transparent relative;
+      @apply transform-gpu select-none;
+      contain: content;
+    }
+
+    .animate-marquee {
+      @apply flex items-center;
+      @apply will-change-transform;
+      backface-visibility: hidden;
+    }
+
+    .embla {
+      @apply overflow-hidden;
+    }
+  }
+}

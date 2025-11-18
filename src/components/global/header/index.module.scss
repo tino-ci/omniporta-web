@@ -1,0 +1,46 @@
+.app {
+  @apply fixed top-0 z-[111] w-full flex items-center justify-between  opacity-[1] translate-y-0;
+  @apply pc:py-[6px] phone:py-[8px] text-[#000] phone:px-[20px] pc:px-[80px];
+  @apply pc:h-[60px];
+  backdrop-filter: blur(12px);
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    background-color 0.4s ease;
+  transform: translateY(0);
+  .app-view {
+    @apply pc:w-contentMaxWidth mx-auto w-full flex items-center justify-between;
+  }
+  .nav-item {
+    @apply text-[#000] opacity-[0.7];
+  }
+  .nav-active {
+    @apply opacity-[1] relative;
+    &::before {
+      content: '';
+      @apply inline-block absolute bottom-[-2px] mt-[4px] w-full h-[2px] bg-[#000];
+    }
+  }
+  .social-item {
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+.app-hidden {
+  @apply opacity-0 translate-y-[-100%] pointer-events-none;
+}
+.faded {
+  @apply bg-[rgba(255,255,255,0.1)]; // 滑动停止后淡化背景
+}
+.light-text {
+  a {
+    // @apply text-[#000] !important;
+  }
+}
+.nav-item {
+  @apply phone:text-[#000000CC] phone:px-[24px] phone:text-[18px];
+}
+.nav-active {
+  @apply phone:text-titleColor phone:bg-[rgba(255,255,255,0.06)];
+}

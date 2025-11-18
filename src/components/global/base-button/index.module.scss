@@ -1,0 +1,18 @@
+.app {
+  @apply w-[180px] h-[48px] rounded-[58px]  text-[#fff];
+  @apply flex items-center justify-center text-center text-[16px] font-[700];
+  @apply phone:w-full phone:h-[48px] relative;
+  @apply bg-[url('/images/bg-btn.png')];
+  @apply bg-[center_center] bg-[no-repeat] bg-[cover];
+
+  &::before {
+    @apply bg-[#fff] inset-0 absolute z-[0] scale-x-0 content-[''];
+    @apply origin-[50%] transition-transform duration-500 ease-in-out;
+  }
+  &:hover::before {
+    @apply scale-x-0 phone:scale-x-0;
+  }
+  & > * {
+    @apply relative z-[2]; /* 確保所有子元素在偽元素之上 */
+  }
+}

@@ -1,0 +1,9 @@
+.app {
+  h2 {
+    @apply text-textColor pc:text-[40px] phone:text-[20px] phone:leading-[150%] font-[600];
+  }
+  .description {
+    @apply pc:pt-[8px] pc:text-[16px] phone:text-[12px] phone:pt-[8px];
+    @apply text-subTitleColor leading-[150%] font-[500];
+  }
+}

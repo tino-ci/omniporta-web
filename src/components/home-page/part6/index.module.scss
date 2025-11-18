@@ -1,0 +1,85 @@
+.app {
+  @apply max-w-contentWidth mx-auto pc:leading-[1.2] phone:leading-[1.5];
+  @apply text-titleColor;
+  @apply pc:pt-[64px] pc:pb-[100px];
+  @apply phone:pb-[48px] phone:px-[20px];
+
+  .cards {
+    @apply grid mt-[48px] phone:mt-[24px];
+    @apply pc:gap-[24px] phone:gap-[16px];
+    @apply pc:grid-cols-3 pc:grid-rows-2;
+    @apply phone:grid-cols-2;
+
+    .card {
+      @apply rounded-[16px]  transition-all duration-[300ms] pc:hover:scale-[1.05];
+      @apply pc:min-h-[226px] phone:min-h-[160px];
+      @apply pc:p-[24px] phone:p-[12px];
+      @apply flex flex-col justify-between;
+      @apply bg-cover bg-[center_bottom] bg-no-repeat;
+
+      &.card-normal {
+        @apply bg-white border border-gray-100 shadow-sm;
+
+        .card-icon {
+          @apply flex items-center justify-start;
+        }
+
+        .card-content {
+          @apply flex-1 relative max-w-[240px];
+          .card-view {
+            @apply absolute bottom-0;
+          }
+
+          .card-title {
+            @apply text-[20px] font-[600] text-titleColor mb-[8px];
+            @apply phone:text-[16px];
+          }
+
+          .card-description {
+            @apply text-[14px] text-subDescColor leading-[1.5];
+            @apply phone:text-[12px] phone:leading-[1.2];
+            @apply phone:overflow-hidden phone:text-ellipsis;
+            @apply phone:line-clamp-2;
+          }
+        }
+      }
+
+      &.card-center {
+        @apply bg-gradient-to-br from-orange-400 to-red-500;
+        @apply pc:row-span-2 pc:col-start-2;
+        @apply phone:order-[-1];
+        @apply phone:col-span-2;
+        @apply relative overflow-hidden;
+
+        .center-content {
+          @apply flex items-center justify-center flex-col h-full;
+
+          .center-title {
+            @apply text-[36px] font-[700] text-white text-center;
+            @apply phone:text-[24px];
+            @apply mb-[8px];
+          }
+          .center-description {
+            @apply text-[14px] text-white/70 leading-[1.5];
+            @apply phone:text-[12px] phone:leading-[1.2];
+            @apply phone:overflow-hidden phone:text-ellipsis;
+            @apply phone:line-clamp-2;
+          }
+        }
+
+        // 添加装饰性背景元素
+        &::before {
+          content: '';
+          @apply absolute top-0 right-0 w-[128px] h-[128px] opacity-[0.2];
+          background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        }
+
+        &::after {
+          content: '';
+          @apply absolute bottom-0 left-0 w-[96px] h-[96px] opacity-[0.1];
+          background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+        }
+      }
+    }
+  }
+}

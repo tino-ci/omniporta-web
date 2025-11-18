@@ -1,0 +1,105 @@
+.app {
+  @apply relative w-full pc:h-[808px] phone:h-[550px] overflow-hidden  leading-[1.2] phone:leading-[1.5];
+
+  .video-bg {
+    @apply absolute inset-0 left-1/2 -translate-x-1/2 w-full h-full z-0;
+    @apply max-h-[808px] phone:max-h-[500px];
+
+    @apply bg-gradient-to-b from-[rgba(245,243,239,1)] from-[75%] to-[rgba(255,255,255,0)] to-[90%];
+    .video-mask {
+      @apply absolute inset-0 z-[1];
+    }
+    .video-linear-mask {
+      @apply absolute top-0 left-0 h-[590px] w-full z-[2];
+      @apply bg-gradient-to-b from-[rgba(255,255,255,1)] to-[rgba(255,255,255,0)] to-50%;
+    }
+    .part1-banner {
+      @apply max-w-[1440px] mx-auto h-full;
+      @apply left-1/2 -translate-x-1/2;
+      @apply absolute;
+    }
+  }
+  .carousel-logo-container {
+    @apply mx-auto max-w-contentMaxWidth border-b-[1px] border-[rgba(0,0,0,0.07)] py-[32px] pc:px-[134px];
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 z-[1];
+  }
+
+  /* 正文 */
+  .part1-content {
+    // @apply relative z-30 pc:mx-[80px] pc:mt-[152px] mt-[116px] phone:px-[20px];
+    @apply relative z-30 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[995px] phone:w-[335px];
+    @apply text-center -mt-[30px];
+    opacity: 0; /* 初始透明 */
+    animation: fadeInUp 0.3s ease-in-out forwards; /* 淡入动画 */
+    animation-delay: 0.05s; /* 延迟0.5秒，与加载蒙层淡出协调 */
+
+    .part1-title {
+      @apply font-bold pc:text-[72px] phone:text-[28px];
+    }
+    .part1-sub-title {
+      @apply pc:mt-[20px] pc:text-[34px]  mx-auto phone:mt-[16px] phone:text-[16px];
+      @apply tracking-[0.5px] text-subTitleColor;
+      @apply phone:w-[315px] font-[600];
+    }
+    .part1-desc {
+      @apply pc:mt-[20px] pc:text-[16px]  mx-auto phone:mt-[16px] phone:text-[12px];
+      @apply tracking-[0.5px] text-descColor;
+      @apply phone:w-[315px] pc:w-[520px];
+    }
+  }
+  /* 淡入动画定义 */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      // transform: translateY(20px); /* 从下方20px淡入 */
+    }
+    100% {
+      opacity: 1;
+      // transform: translateY(0);
+    }
+  }
+
+  /* 动画 */
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
