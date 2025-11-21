@@ -42,9 +42,9 @@
       @apply phone:w-[315px] font-[600];
     }
     .part1-desc {
-      @apply pc:mt-[20px] pc:text-[16px]  mx-auto phone:mt-[16px] phone:text-[12px];
+      @apply pc:mt-[20px] pc:text-[20px]  mx-auto phone:mt-[16px] phone:text-[12px];
       @apply tracking-[0.5px] text-descColor;
-      @apply phone:w-[315px] pc:w-[520px];
+      @apply phone:w-[315px] pc:w-[650px];
     }
   }
   /* 淡入动画定义 */

@@ -22,8 +22,8 @@ const Index: React.FC<Props> = props => {
     },
     {
       id: 2,
-      title: 'Web3 Life',
-      description: 'Any Payment. Zero Friction.',
+      title: 'Any Payment. Zero Friction.',
+      description: '',
       icon: null,
       bgColor: 'bg-gradient-to-br from-orange-400 to-red-500',
       iconBg: '',

@@ -47,18 +47,18 @@ const Index: React.FC = () => {
         >
           The AI Smart Wallet Powered by Your Identity
         </h1>
-        <p
+        {/* <p
           className={`${style['part1-sub-title']} ${isVisible ? 'animate__animated animate__fadeInUp' : 'hidden'} `}
           data-wow-delay='0.4s'
         >
           Omniporta - The AI-Powered DID Wallet
-        </p>
+        </p> */}
         <p
           className={`${style['part1-desc']} ${isVisible ? 'animate__animated animate__fadeInUp' : 'hidden'} `}
           data-wow-delay='0.4s'
         >
-          Your actions become identity capital earning you better access, opportunities, and rewards across every
-          ecosystem.
+          Your actions become <span className='font-[700]'>identity capital</span> earning you better access,
+          opportunities, and rewards across every ecosystem.
         </p>
         <div className='flex justify-center items-center mt-[72px] phone:mt-[44px]'>
           <BaseButton
@@ -77,7 +77,7 @@ const Index: React.FC = () => {
         <div
           className={`flex justify-center items-center text-[16px] phone:text-[12px] mt-[20px] phone:mt-[10px] ${isVisible ? 'animate__animated animate__fadeInUp' : 'hidden'}`}
         >
-          Trusted by 100,000+ users
+          Trusted by <span className='font-[700] mx-[5px]'>100,000+</span> users
         </div>
       </motion.div>
       {/* <div className={style['carousel-logo-container']}>
