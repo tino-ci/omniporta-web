@@ -1,0 +1,86 @@
+.app {
+  @apply w-full bg-white overflow-hidden font-manrope;
+  @apply pc:py-[94px];
+  @apply phone:py-8 phone:px-6;
+
+  .container {
+    @apply mx-auto flex flex-col items-center;
+    @apply pc:w-[1016px];
+    @apply phone:gap-[26px];
+  }
+
+  .title {
+    @apply font-semibold text-black text-center;
+    @apply pc:text-[40px] pc:mb-12;
+    @apply phone:text-[20px] phone:leading-[150%];
+  }
+
+  .cards {
+    @apply pc:flex pc:gap-[22px];
+    @apply phone:flex phone:flex-col phone:gap-2;
+  }
+
+  .left-cards {
+    @apply flex flex-col;
+    @apply pc:gap-[24px];
+    @apply phone:gap-2;
+  }
+
+  /* Task Levels 卡片 */
+  .card-task {
+    @apply rounded-2xl overflow-hidden relative;
+    @apply pc:w-[602px] pc:h-[243px] pc:p-8;
+    @apply phone:h-[165px] phone:p-5;
+    @apply bg-[url('/images/part3/web02_bg1.png')] bg-cover bg-no-repeat;
+  }
+
+  /* Points Value 卡片 */
+  .card-points {
+    @apply rounded-2xl overflow-hidden relative;
+    @apply pc:w-[602px] pc:h-[243px] pc:p-8;
+    @apply phone:h-[147px] phone:p-5;
+    @apply bg-[url('/images/part3/web02_bg2.png')] bg-cover bg-no-repeat;
+  }
+
+  /* Details & Updates 卡片 */
+  .card-details {
+    @apply rounded-2xl overflow-hidden relative;
+    @apply pc:w-[392px] pc:h-[510px] pc:p-8;
+    @apply phone:h-[218px] phone:p-5;
+    @apply bg-[url('/images/part3/web02_bg3.png')] bg-cover bg-no-repeat;
+  }
+
+  .card-icon {
+    @apply pc:w-12 pc:h-12;
+    @apply phone:w-[26px] phone:h-[26px];
+  }
+
+  .card-content {
+    @apply flex flex-col;
+    @apply pc:mt-[23px] pc:gap-4;
+    @apply phone:mt-[12px] phone:gap-2;
+  }
+
+  .card-title {
+    @apply font-semibold text-white;
+    @apply pc:text-[32px];
+    @apply phone:text-[18px];
+  }
+
+  .card-desc {
+    @apply font-medium text-white;
+    @apply pc:text-[14px] pc:leading-[24px];
+    @apply phone:text-[12px] phone:leading-[150%];
+  }
+
+  .social-icons {
+    @apply flex items-center absolute;
+    @apply pc:gap-6 pc:bottom-8 pc:left-8;
+    @apply phone:gap-4 phone:bottom-5 phone:left-5;
+  }
+
+  .social-icon {
+    @apply pc:w-12 pc:h-12;
+    @apply phone:w-6 phone:h-6;
+  }
+}

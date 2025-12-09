@@ -18,34 +18,54 @@ interface Props {}
 
 const Index: React.FC<Props> = props => {
   const {} = props
-  const isLightText = useHeaderColorBasedOnSections([PATH_KEY.KEY_FEATURES, PATH_KEY.SUPPORT])
+  const isLightText = useHeaderColorBasedOnSections([PATH_KEY.KEY_FEATURES])
   const isMobile = useIsMobile()
-  const [activeKey, setActiveKey] = useState<string>(PATH_KEY.HOME)
+  const [activeKey, setActiveKey] = useState<string>('')
   const { visible, faded } = useHideOnScroll({ triggerOffset: 80, restoreDelay: 400 })
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const str = pathname
-    const urlName = str.slice(1)
-    const urlList = ['/airdrop', '/agripod']
-    if (urlList.includes(pathname)) {
-      setActiveKey(urlName)
-    } else if (pathname === '/') {
-      const hash = getHash()
-      const hashKey = hash.slice(1)
-      if (hashKey) {
-        setActiveKey(hashKey)
-        // 延迟滚动到锚点位置，确保页面元素已完全渲染
-        setTimeout(() => {
-          const targetElement = document.getElementById(hashKey)
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
-        }, 100)
-      } else {
-        setActiveKey(PATH_KEY.HOME)
+    setMounted(true)
+  }, [])
+
+  // 获取初始activeKey
+  const getInitialActiveKey = () => {
+    const hash = getHash()
+    // 先检查是否有hash匹配的nav item（如 /#Features）
+    if (hash) {
+      const navItemWithHash = NAV_LIST.find(item => item.path === pathname + hash)
+      if (navItemWithHash) {
+        return navItemWithHash.key
       }
+    }
+    // 再检查pathname匹配的nav item
+    const navItem = NAV_LIST.find(item => item.path === pathname)
+    if (navItem) {
+      return navItem.key
+    }
+    // 默认返回home
+    if (pathname === '/') {
+      return PATH_KEY.HOME
+    }
+    return ''
+  }
+
+  useEffect(() => {
+    const key = getInitialActiveKey()
+    setActiveKey(key)
+
+    // 如果有hash，延迟滚动到锚点位置
+    const hash = getHash()
+    if (hash && pathname === '/') {
+      const hashKey = hash.slice(1)
+      setTimeout(() => {
+        const targetElement = document.getElementById(hashKey)
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 100)
     }
   }, [pathname])
 
@@ -117,8 +137,8 @@ const Index: React.FC<Props> = props => {
       <div className={style['app-view']}>
         <Logo
           color={isLightText ? '#fff' : '#fff'}
-          width={isMobile ? '124px' : '209px'}
-          height={isMobile ? '24px' : '40px'}
+          width={mounted && isMobile ? '124px' : '209px'}
+          height={mounted && isMobile ? '24px' : '40px'}
         />
         <nav className={`phone:hidden inline-flex grid-cols-${NAV_LIST.length} pc:gap-x-[32px] `}>
           {NAV_LIST.map((item: NAV_TYPE) => (
@@ -133,26 +153,15 @@ const Index: React.FC<Props> = props => {
             </Link>
           ))}
         </nav>
-        {!isMobile ? (
-          <>
-            <div className='flex items-center justify-end gap-x-[24px] pc:w-[209px]'>
-              <BaseSocial classNames='grid grid-cols-2 gap-x-[24px]' iconColor={'#FFFFFFCC'} />
-              {/* <BaseButton
-                className={`animate__animated animate__fadeIn `}
-                data-wow-delay='0.6s'
-                onClick={() => {}}
-                text={'Download App'.toUpperCase()}
-              /> */}
-            </div>
-          </>
-        ) : (
-          <>
-            <div className='flex items-center justify-end gap-x-[24px] '>
-              <BaseSocial classNames='grid grid-cols-2 gap-x-[24px]' iconColor={'#FFFFFFCC'} />
-              <MenuIcon onClick={() => handleDrawer(true)} />
-            </div>
-          </>
-        )}
+        {/* PC端 */}
+        <div className='pc:flex phone:hidden items-center justify-end gap-x-[24px] pc:w-[209px]'>
+          <BaseSocial classNames='grid grid-cols-3 gap-x-[24px]' />
+        </div>
+        {/* 移动端 */}
+        <div className='phone:flex pc:hidden items-center justify-end gap-x-[24px]'>
+          <BaseSocial classNames='grid grid-cols-3 gap-x-[14px] ' iconHeight={24} iconWidth={24} />
+          <MenuIcon onClick={() => handleDrawer(true)} />
+        </div>
       </div>
       <Drawer
         sx={{

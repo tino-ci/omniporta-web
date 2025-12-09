@@ -31,7 +31,7 @@ const Index: React.FC<Props> = props => {
           {/* <Logo width={isMobile ? 166 : 250} height={isMobile ? 32 : 48} color={'#00DA95'} /> */}
           <Logo width={167} height={33} color={'#000'} />
           <div className={`pt-[24px] text-[#000] flex justify-start items-center`}>Follow us on:</div>
-          <BaseSocial classNames='mt-[16px] inline-flex gap-x-[32px]' iconColor={'#FFFFFFCC'} />
+          <BaseSocial classNames='mt-[16px] inline-flex gap-x-[32px]' />
         </div>
         {/* <div className={style['nav-list']}>
           {indexNav.map(item => (

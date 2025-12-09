@@ -26,11 +26,27 @@ const config: Config = {
         'subTitleColor': '#000000CC', //0.8
         'descColor': '#00000099', //0.6
         'subDescColor': '#00000066', //0.4
+        "textGray": "rgba(0, 0, 0, 0.6)",
       },
       boxShadow: {  // 新增自定义阴影
         'spaceShadow': '0px 0px 94px 0px rgba(0,218,149,1)',
       },
+      fontFamily: {
+        "manrope": "Manrope"
+      },
+      borderRadius: {
+        "num-16": "16px"
+      },
+      padding: {
+        "num-8": "8px"
+      }
     },
+    fontSize: {
+      "num-14": "14px"
+    },
+    lineHeight: {
+      "num-24": "24px"
+    }
   },
   plugins: [
     require('tailwind-scrollbar-hide')

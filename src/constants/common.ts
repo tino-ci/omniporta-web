@@ -2,14 +2,14 @@ export const enum PATH_URL {
     HOME = '/',
 
     KEY_FEATURES = '/#Features',
-    SUPPORT = '/#Support',
+    ALPHA = '/alphaLaunch',
 
 }
 export const enum PATH_KEY {
     HOME = "home",
 
     KEY_FEATURES = "Features",
-    SUPPORT = "Support",
+    ALPHA = "AlphaLaunch",
 
 }
 export type NAV_TYPE = {
@@ -33,14 +33,14 @@ export const NAV_LIST: NAV_TYPE[] = [
         key: PATH_KEY.KEY_FEATURES
     },
     {
-        path: PATH_URL.SUPPORT,
-        name: "Support",
-        key: PATH_KEY.SUPPORT
+        path: PATH_URL.ALPHA,
+        name: "Alpha Launch",
+        key: PATH_KEY.ALPHA
     }
 ]
 
 export const enum SOCIAL_MEDIA_URL {
-    DISCORD = "",
+    DISCORD = "https://discord.gg/zTD6prV5KS",
     TG = "https://t.me/Omniporta",
     X = "https://x.com/omni_porta",
     EMAIL = "mailto:contact@omniporta.com",

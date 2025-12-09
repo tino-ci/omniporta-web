@@ -1,0 +1,106 @@
+.app {
+  @apply w-full bg-white overflow-hidden font-manrope;
+  @apply pc:py-[67px];
+  @apply phone:py-8 phone:px-6;
+
+  .container {
+    @apply mx-auto;
+    @apply pc:w-[1016px];
+    @apply phone:flex phone:flex-col phone:gap-2;
+  }
+
+  .top-cards {
+    @apply pc:flex pc:gap-[25px] pc:mb-[24px];
+    @apply phone:flex phone:flex-col phone:gap-2;
+  }
+
+  /* What You Need to Do 卡片 */
+  .card-need {
+    @apply rounded-2xl overflow-hidden;
+    @apply pc:w-[496px] pc:h-[282px] pc:py-12 pc:px-8;
+    @apply phone:h-[117px] phone:py-6 phone:px-5;
+    // background: linear-gradient(180deg, #f7f9fc, #f0f3f7);
+    @apply bg-[url('/images/part2/web01_bg1.png')] bg-cover bg-no-repeat;
+  }
+
+  /* What You Can Get 卡片 */
+  .card-get {
+    @apply rounded-2xl overflow-hidden;
+    @apply pc:w-[495px] pc:h-[282px] pc:py-12 pc:px-8;
+    @apply phone:py-6 phone:px-5;
+    @apply bg-[url('/images/part2/web01_bg2.png')] bg-cover bg-no-repeat;
+  }
+
+  .card-title {
+    @apply font-semibold text-white;
+    @apply pc:text-[32px] pc:mb-4;
+    @apply phone:text-[18px] phone:mb-2;
+  }
+
+  .card-desc {
+    @apply font-medium text-white;
+    @apply pc:text-[14px] pc:leading-[24px] pc:w-[433px];
+    @apply phone:text-[12px] phone:leading-[150%];
+  }
+
+  /* How to Participate 卡片 */
+  .card-participate {
+    @apply rounded-2xl overflow-hidden relative;
+    @apply pc:w-[1016px] pc:p-8;
+    @apply phone:py-6 phone:px-5;
+    background: linear-gradient(180deg, #f7f9fc, #f0f3f7);
+  }
+
+  .participate-title {
+    @apply font-semibold text-black;
+    @apply pc:text-[32px] pc:mb-6;
+    @apply phone:text-[18px] phone:mb-4;
+  }
+
+  .participate-line {
+    @apply absolute border-r border-black/10;
+    @apply pc:left-[47.5px];
+    @apply phone:left-[31.5px];
+  }
+
+  .steps {
+    @apply flex flex-col;
+    @apply pc:gap-8;
+    @apply phone:gap-6;
+  }
+
+  .step-item {
+    @apply flex items-start;
+    @apply pc:gap-6;
+    @apply phone:gap-4;
+  }
+
+  .step-number {
+    @apply rounded-full flex items-center justify-center text-white font-medium capitalize shrink-0 relative;
+    @apply pc:w-8 pc:h-8 pc:min-w-[32px] pc:min-h-[32px] pc:text-[16px] pc:leading-[24px];
+    @apply phone:w-6 phone:h-6 phone:min-w-[24px] phone:min-h-[24px] phone:text-[12px] phone:leading-[18px];
+
+    &::after {
+      content: '';
+      @apply absolute inset-0 rounded-full bg-[#f4f6f9] -z-10;
+    }
+  }
+
+  .step-content {
+    @apply flex flex-col;
+    @apply pc:gap-4 pc:max-w-[890px];
+    @apply phone:gap-2 phone:max-w-[247px];
+  }
+
+  .step-title {
+    @apply font-semibold text-black;
+    @apply pc:text-[20px];
+    @apply phone:text-[16px];
+  }
+
+  .step-desc {
+    @apply font-medium text-textGray;
+    @apply pc:text-[14px] pc:leading-[24px];
+    @apply phone:text-[12px] phone:leading-[150%] phone:opacity-40;
+  }
+}

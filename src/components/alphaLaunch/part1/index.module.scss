@@ -1,0 +1,47 @@
+.app {
+  @apply relative w-full pc:h-[800px] phone:h-[550px] overflow-hidden;
+
+  .video-bg {
+    @apply absolute inset-0 left-1/2 -translate-x-1/2 w-full h-full z-0;
+
+    .part1-banner {
+      @apply max-w-[1440px] mx-auto h-full;
+      @apply left-1/2 -translate-x-1/2;
+      @apply absolute;
+    }
+  }
+
+  /* 正文 */
+  .part1-content {
+    @apply relative z-30 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2;
+    @apply pc:w-[930px] phone:w-full phone:px-[20px];
+    @apply text-center pc:-mt-[74px] phone:-mt-[30px];
+    opacity: 0;
+    animation: fadeInUp 0.3s ease-in-out forwards;
+    animation-delay: 0.05s;
+
+    .part1-title {
+      @apply font-bold pc:text-[78px] phone:text-[32px] leading-[120%];
+    }
+    .part1-sub-title {
+      @apply pc:mt-[16px] phone:mt-[8px];
+      @apply pc:text-[32px] phone:text-[16px];
+      @apply font-semibold opacity-70 leading-[1.5];
+    }
+    .part1-desc {
+      @apply pc:mt-[32px] phone:mt-[20px];
+      @apply pc:text-[16px] phone:text-[12px];
+      @apply font-medium text-textGray leading-[150%];
+      @apply pc:w-[568px] phone:w-[281px] mx-auto;
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

@@ -31,12 +31,12 @@ const Index: React.FC<Props> = props => {
       href: SOCIAL_MEDIA_URL.TG,
       target: '_blank',
       icon: <TgIcon color={iconColor} width={iconWidth} height={iconHeight} />
+    },
+    {
+      href: SOCIAL_MEDIA_URL.DISCORD,
+      target: '_blank',
+      icon: <DiscordIcon color={iconColor} width={iconWidth} height={iconHeight} />
     }
-    // {
-    //   href: SOCIAL_MEDIA_URL.DISCORD,
-    //   target: '_blank',
-    //   icon: <DiscordIcon color={iconColor} width={iconWidth} height={iconHeight} />
-    // },
     // {
     //   href: SOCIAL_MEDIA_URL.EMAIL,
     //   target: '_blank',

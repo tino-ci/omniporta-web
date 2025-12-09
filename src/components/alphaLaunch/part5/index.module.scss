@@ -1,0 +1,56 @@
+.app {
+  @apply w-full bg-white overflow-hidden font-manrope;
+  @apply pc:py-[80px];
+  @apply phone:py-6;
+
+  .container {
+    @apply mx-auto flex flex-col items-center;
+    @apply pc:w-[1016px];
+    @apply phone:px-6 phone:gap-6;
+  }
+
+  .title {
+    @apply font-semibold text-black text-center capitalize;
+    @apply pc:text-[40px] pc:mb-12;
+    @apply phone:text-[20px] phone:leading-[150%];
+  }
+
+  .faq-list {
+    @apply w-full flex flex-col;
+    @apply pc:gap-6;
+    @apply phone:gap-2;
+  }
+
+  .faq-item {
+    @apply w-full rounded-[20px] overflow-hidden cursor-pointer;
+    @apply pc:p-10;
+    @apply phone:p-5 phone:rounded-[6.44px];
+    background: linear-gradient(180deg, #f7f9fc, #f0f3f7);
+  }
+
+  .faq-header {
+    @apply flex items-start justify-between gap-5;
+  }
+
+  .faq-question {
+    @apply font-semibold text-black;
+    @apply pc:text-[32px];
+    @apply phone:text-[14px] phone:leading-[150%];
+  }
+
+  .faq-icon {
+    @apply shrink-0;
+    @apply pc:w-12 pc:h-12;
+    @apply phone:w-6 phone:h-6;
+  }
+
+  .faq-answer {
+    @apply font-semibold text-black/40;
+    @apply pc:text-[24px] pc:mt-4;
+    @apply phone:text-[12px] phone:leading-[150%] phone:mt-2.5;
+  }
+
+  .faq-item.active {
+    // 展开状态的样式
+  }
+}
