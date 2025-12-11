@@ -46,8 +46,8 @@
 
   .faq-answer {
     @apply font-semibold text-black/40;
-    @apply pc:text-[24px] pc:mt-4;
-    @apply phone:text-[12px] phone:leading-[150%] phone:mt-2.5;
+    @apply pc:text-[32px] pc:mt-4;
+    @apply phone:text-[14px] phone:leading-[150%] phone:mt-2.5;
   }
 
   .faq-item.active {

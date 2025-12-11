@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react'
 import { BaseButton } from '@/components/global'
 import styles from './index.module.scss'
+import { downloadURL } from '@/constants'
 
 const Content = () => {
   return (
@@ -24,12 +25,19 @@ const Content = () => {
         </p>
         <div className='flex justify-center items-center pc:mt-[32px] phone:mt-[20px]'>
           <BaseButton
-            className='relative pc:h-[48px] pc:text-[16px] pc:w-[226px] phone:text-[14px] phone:h-[42px] phone:w-[180px] rounded-full '
+            className={`relative pc:h-[65px] pc:text-[24px] pc:w-[340px] phone:text-[12px] phone:h-[40px] phone:w-[150px] rounded-[12px] ]  `}
+            data-wow-delay='0.6s'
+            text={'Download Omniporta'}
             onClick={() => {
-              window.open('https://omniporta.com/download/omniporta.apk', '_blank')
+              window.open(downloadURL, '_blank')
             }}
-            text='Download Omniporta'
-          ></BaseButton>
+          >
+            <span
+              className={`absolute top-[-13px] right-0 z-[1] text-[rgba(0,0,0,0.8)] font-[500] text-[12px] px-[12px] py-[6px] phone:px-[6px] phone:py-[3px] phone:text-[10px] bg-[rgba(243,246,249,0.7)] rounded-[10px] rounded-bl-[2px]`}
+            >
+              New
+            </span>
+          </BaseButton>
         </div>
       </div>
     </div>

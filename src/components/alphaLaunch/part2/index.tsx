@@ -12,13 +12,13 @@ const STEPS = [
   {
     number: '2',
     gradient: 'linear-gradient(180deg, #2ae3b5, #4880ff)',
-    title: 'Complete Tasks to Earn Points',
+    title: 'Complete Tasks',
     desc: 'After logging in, go to the Activity Center to claim tasks. Complete them to earn points automatically.'
   },
   {
     number: '3',
     gradient: 'linear-gradient(180deg, #5e9cff, #8446ff)',
-    title: 'Points Accumulation',
+    title: 'Accumulate points',
     desc: 'Your total points will determine your eligibility and weight for future airdrops and ecosystem benefits which accumulate automatically. The more points you earn, the greater the rewards you can unlock.'
   }
 ]

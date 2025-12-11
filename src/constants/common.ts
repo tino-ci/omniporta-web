@@ -47,3 +47,5 @@ export const enum SOCIAL_MEDIA_URL {
     FACEBOOK = "",
 }
 export const copyrightText = `©${new Date().getFullYear()}. Powered by Omniporta. All Rights Reserved.`
+
+export const downloadURL = 'https://omniporta.com/wallet-activity/download'

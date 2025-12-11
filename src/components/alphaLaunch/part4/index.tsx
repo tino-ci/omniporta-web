@@ -7,7 +7,7 @@ const RULES = [
     number: '1',
     gradient: 'linear-gradient(180deg, #ffbb46, #ff5e5e)',
     title: 'Period',
-    desc: 'From December 5, 2025, 00:00 (UTC) to January 9, 2026, 23:59 (UTC).'
+    desc: 'From December 9, 2025, 00:00 (UTC) to January 9, 2026, 23:59 (UTC).'
   },
   {
     number: '2',
@@ -18,14 +18,14 @@ const RULES = [
   {
     number: '3',
     gradient: 'linear-gradient(180deg, #5ef7ff, #4649ff)',
-    title: 'Points Rules',
+    title: 'Rules',
     desc: 'Points are earned by completing designated tasks and will be automatically credited to your account. Points are non-transferable, non-tradable, and cannot be refunded.'
   },
   {
     number: '4',
     gradient: 'linear-gradient(180deg, #c586ff, #1f31fe)',
-    title: 'Rule Interpretation',
-    desc: 'Omniporta reserves the right to interpret the rules of this event and the final disposition of points.'
+    title: 'Interpretation',
+    desc: 'Omniporta reserves the right to interpret the rules of thisevent and the final disposition of points.'
   }
 ]
 
