@@ -33,6 +33,7 @@ import Protection4 from "./Protection4";
 import Game from "./Game";
 import Bag from "./Bag";
 import Ticket from "./Ticket";
+import Download from "./Download";
 
 
 
@@ -64,4 +65,5 @@ export {
     Protection2,
     Protection3,
     Protection4,
+    Download,
 }

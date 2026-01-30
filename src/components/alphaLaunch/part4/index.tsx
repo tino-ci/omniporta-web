@@ -7,7 +7,7 @@ const RULES = [
     number: '1',
     gradient: 'linear-gradient(180deg, #ffbb46, #ff5e5e)',
     title: 'Period',
-    desc: 'From December 9, 2025, 00:00 (UTC) to January 9, 2026, 23:59 (UTC).'
+    desc: 'Starting December 9, 2025, 00:00 (UTC).'
   },
   {
     number: '2',

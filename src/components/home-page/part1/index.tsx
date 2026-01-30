@@ -1,17 +1,13 @@
-import React, { memo, useState, useRef, useEffect, useCallback } from 'react'
+import React, { memo, useState } from 'react'
 import style from './index.module.scss'
-import { downloadURL, PATH_KEY } from '@constants/index'
+import { downloadAPKURL, downloadIOSURL, PATH_KEY } from '@constants/index'
 
 import { motion } from 'motion/react'
 
-import { useRouter } from 'next/navigation'
-import CarouselLogo from '../carousel-logo'
 import { BaseButton } from '@/components/global'
-import { useIsMobile } from '@/hooks'
 const Index: React.FC = () => {
-  const router = useRouter()
-  const isMobile = useIsMobile()
   const [isVisible, setIsVisible] = useState(false)
+  
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
@@ -60,19 +56,35 @@ const Index: React.FC = () => {
           Your actions become <span className='font-[700]'>identity capital</span> earning you better access,
           opportunities, and rewards across every ecosystem.
         </p>
-        <div className='flex justify-center items-center mt-[72px] phone:mt-[44px]'>
+        <div className='flex justify-center phone:flex-col items-center gap-6 mt-[72px] phone:mt-[44px]'>
           <BaseButton
-            className={`relative pc:h-[65px] pc:text-[24px] pc:w-[340px] phone:text-[12px] phone:h-[40px] phone:w-[150px] rounded-[12px]  ${isVisible ? 'animate__animated animate__fadeInUp' : 'hidden'} `}
+            className={`relative pc:h-[54px] pc:text-[14px] pc:w-[226px] phone:text-[12px] phone:h-[42px] phone:w-[176px] rounded-[32px]  ${isVisible ? 'animate__animated animate__fadeInUp' : 'hidden'} `}
             data-wow-delay='0.6s'
             onClick={() => {
-              window.open(downloadURL, '_blank')
+              window.open(downloadIOSURL, '_blank')
             }}
             text={'Download Omniporta'}
+            platformIcon='ios'
           >
             <span
               className={`absolute top-[-13px] right-0 z-[1] text-[rgba(0,0,0,0.8)] font-[500] text-[12px] px-[12px] py-[6px] phone:px-[6px] phone:py-[3px] phone:text-[10px] bg-[rgba(243,246,249,0.7)] rounded-[10px] rounded-bl-[2px]`}
             >
-              New
+              Alpha
+            </span>
+          </BaseButton>
+          <BaseButton
+            className={`relative pc:h-[54px] pc:text-[14px] pc:w-[226px] phone:text-[12px] phone:h-[42px] phone:w-[176px] rounded-[32px]  ${isVisible ? 'animate__animated animate__fadeInUp' : 'hidden'} `}
+            data-wow-delay='0.6s'
+            onClick={() => {
+              window.open(downloadAPKURL, '_blank')
+            }}
+            text={'Download Omniporta'}
+            platformIcon='android'
+          >
+            <span
+              className={`absolute top-[-13px] right-0 z-[1] text-[rgba(0,0,0,0.8)] font-[500] text-[12px] px-[12px] py-[6px] phone:px-[6px] phone:py-[3px] phone:text-[10px] bg-[rgba(243,246,249,0.7)] rounded-[10px] rounded-bl-[2px]`}
+            >
+              Alpha
             </span>
           </BaseButton>
         </div>

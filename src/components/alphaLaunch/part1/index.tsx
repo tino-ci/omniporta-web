@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 import { BaseButton } from '@/components/global'
 import styles from './index.module.scss'
-import { downloadURL } from '@/constants'
+import { downloadAPKURL, downloadIOSURL, downloadURL } from '@/constants'
 
 const Content = () => {
   return (
@@ -23,22 +23,38 @@ const Content = () => {
           Alpha Launch is here! Participate in tasks, activities and provide feedback to earn points for future airdrops
           and benefits.
         </p>
-        <div className='flex justify-center items-center pc:mt-[32px] phone:mt-[20px]'>
-          <BaseButton
-            className={`relative pc:h-[65px] pc:text-[24px] pc:w-[340px] phone:text-[12px] phone:h-[40px] phone:w-[150px] rounded-[12px] ]  `}
-            data-wow-delay='0.6s'
-            text={'Download Omniporta'}
-            onClick={() => {
-              window.open(downloadURL, '_blank')
-            }}
-          >
-            <span
-              className={`absolute top-[-13px] right-0 z-[1] text-[rgba(0,0,0,0.8)] font-[500] text-[12px] px-[12px] py-[6px] phone:px-[6px] phone:py-[3px] phone:text-[10px] bg-[rgba(243,246,249,0.7)] rounded-[10px] rounded-bl-[2px]`}
-            >
-              New
-            </span>
-          </BaseButton>
-        </div>
+        <div className='flex justify-center phone:flex-col items-center gap-6 mt-[32px] phone:mt-[20px]'>
+                  <BaseButton
+                    className={`relative pc:h-[54px] pc:text-[14px] pc:w-[226px] phone:text-[12px] phone:h-[42px] phone:w-[176px] rounded-[32px]  `}
+                    data-wow-delay='0.6s'
+                    onClick={() => {
+                      window.open(downloadIOSURL, '_blank')
+                    }}
+                    text={'Download Omniporta'}
+                    platformIcon='ios'
+                  >
+                    <span
+                      className={`absolute top-[-13px] right-0 z-[1] text-[rgba(0,0,0,0.8)] font-[500] text-[12px] px-[12px] py-[6px] phone:px-[6px] phone:py-[3px] phone:text-[10px] bg-[rgba(243,246,249,0.7)] rounded-[10px] rounded-bl-[2px]`}
+                    >
+                      Alpha
+                    </span>
+                  </BaseButton>
+                  <BaseButton
+                    className={`relative pc:h-[54px] pc:text-[14px] pc:w-[226px] phone:text-[12px] phone:h-[42px] phone:w-[176px] rounded-[32px]   `}
+                    data-wow-delay='0.6s'
+                    onClick={() => {
+                      window.open(downloadAPKURL, '_blank')
+                    }}
+                    text={'Download Omniporta'}
+                    platformIcon='android'
+                  >
+                    <span
+                      className={`absolute top-[-13px] right-0 z-[1] text-[rgba(0,0,0,0.8)] font-[500] text-[12px] px-[12px] py-[6px] phone:px-[6px] phone:py-[3px] phone:text-[10px] bg-[rgba(243,246,249,0.7)] rounded-[10px] rounded-bl-[2px]`}
+                    >
+                      Alpha
+                    </span>
+                  </BaseButton>
+                </div>
       </div>
     </div>
   )
